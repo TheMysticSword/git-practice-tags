@@ -41,6 +41,7 @@ namespace AspectAbilities.Buffs
                     origin = damageInfo.position + Vector3.up * 2f
                 }, true);
                 damageInfo.rejected = true;
+                Debug.Log("HauntedDodge triggered");
             }
         }
     }
