@@ -38,7 +38,7 @@ namespace AspectAbilities.Buffs
             {
                 EffectManager.SpawnEffect(HealthComponent.AssetReferences.damageRejectedPrefab, new EffectData
                 {
-                    origin = damageInfo.position
+                    origin = damageInfo.position + Vector3.up * 2f
                 }, true);
                 damageInfo.rejected = true;
             }
