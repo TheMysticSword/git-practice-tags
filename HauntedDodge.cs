@@ -34,7 +34,7 @@ namespace AspectAbilities.Buffs
 
         private void GenericGameEvents_BeforeTakeDamage(DamageInfo damageInfo, MysticsRisky2Utils.MysticsRisky2UtilsPlugin.GenericCharacterInfo attackerInfo, MysticsRisky2Utils.MysticsRisky2UtilsPlugin.GenericCharacterInfo victimInfo)
         {
-            if (!damageInfo.rejected && victimInfo.body && victimInfo.body.HasBuff(buffDef) && Util.CheckRoll(dodgeChance, victimInfo.master))
+            if (!damageInfo.rejected && victimInfo.body && victimInfo.body.HasBuff(buffDef) && (Util.CheckRoll(dodgeChance, victimInfo.master) || Util.CheckRoll(2f, victimInfo.master)))
             {
                 EffectManager.SpawnEffect(HealthComponent.AssetReferences.damageRejectedPrefab, new EffectData
                 {
